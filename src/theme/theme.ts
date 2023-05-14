@@ -12,6 +12,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "black",
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         h4: {

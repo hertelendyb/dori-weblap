@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
-  background-color: #ba7f5b;
+  background: linear-gradient(#ba7f5b, #c0774a);
+  min-height: 100%;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
 }
 
 code {
