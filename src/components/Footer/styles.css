@@ -1,0 +1,16 @@
+.footer {
+  bottom: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.footerText {
+  /* border-top: 1px solid black; */
+  padding-top: 10px;
+  text-align: center;
+}

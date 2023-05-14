@@ -27,6 +27,9 @@ export const theme = createTheme({
     },
     MuiTypography: {
       styleOverrides: {
+        root: {
+          textAlign: "justify",
+        },
         h4: {
           marginBottom: "1rem",
         },
