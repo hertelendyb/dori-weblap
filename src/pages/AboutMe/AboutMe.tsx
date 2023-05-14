@@ -9,12 +9,12 @@ export const AboutMe = () => {
     <Box className="container">
       <Typography variant="h4">Bemutatkozás</Typography>
       <img
-        style={{ width: "200px", float: "left", marginRight: "15px" }}
+        style={{ width: "250px", float: "left", marginRight: "15px" }}
         src="https://st2.depositphotos.com/1441511/12048/i/950/depositphotos_120485602-stock-photo-beauty-woman-portrait-girl-with.jpg"
         alt=""
       />
       <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
         convallis elit a dolor fringilla viverra. Cras tincidunt nulla augue,
         eget accumsan dolor pellentesque in. Nunc viverra ornare risus, at
         ullamcorper quam pulvinar et. Phasellus viverra pulvinar commodo. Fusce

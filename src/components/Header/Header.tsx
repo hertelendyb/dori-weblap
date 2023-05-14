@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import {
   Box,
@@ -9,17 +9,24 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import "./styles.css";
 
 export const Header = () => {
   const mobileSize = useMediaQuery("(max-width:532px)");
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleNavigate = (to: string) => {
+    navigate(to);
     setAnchorEl(null);
   };
 
@@ -37,12 +44,34 @@ export const Header = () => {
       <Box className="navbar">
         {mobileSize ? (
           <>
-            <Button onClick={handleClick}>MENU</Button>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-              <MenuItem onClick={handleClose}>Bemutatkozás</MenuItem>
-              <MenuItem onClick={handleClose}>Szakterületeim</MenuItem>
-              <MenuItem onClick={handleClose}>Tudnivalók</MenuItem>
-              <MenuItem onClick={handleClose}>Kapcsolat</MenuItem>
+            <Button
+              variant="outlined"
+              onClick={handleClick}
+              endIcon={<KeyboardArrowDownIcon />}
+            >
+              MENU
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={() => handleNavigate("/")}>
+                Bemutatkozás
+              </MenuItem>
+              <MenuItem onClick={() => handleNavigate("/szakterulet")}>
+                Szakterületeim
+              </MenuItem>
+              <MenuItem onClick={() => handleNavigate("/tudnivalok")}>
+                Tudnivalók
+              </MenuItem>
+              <MenuItem onClick={() => handleNavigate("/kapcsolat")}>
+                Kapcsolat
+              </MenuItem>
             </Menu>
           </>
         ) : (

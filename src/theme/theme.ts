@@ -16,6 +16,12 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: "black",
+          "&:hover": {
+            border: "1px solid black",
+          },
+        },
+        outlined: {
+          border: "1px solid black",
         },
       },
     },
